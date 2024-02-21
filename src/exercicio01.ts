@@ -14,10 +14,11 @@ class Funcionarios {
     }
     mostrarDados(){
         console.log('---------------Dados do funcionario---------------');
-        console.log(`Nome do usuario: ${this.nomeFuncionario}`);
+        console.log(`Nome do funcionario: ${this.nomeFuncionario}`);
         console.log(`E-mail: ${this.email}`);
         console.log(`telefone: ${this.telefone}`);
-        console.log(`Cargo: ${this.dataNasciment.toLocaleDateString()}`);
+        console.log(`Cargo: ${this.cargo}`);
+        console.log(`Data de nascimento: ${this.dataNasciment.toLocaleDateString()}`);
     }
 }
 const funcionario1 = new Funcionarios('david.henrique4560@gmail.com', 'David Gomes', 'pediatra', '84987047031',new Date('2002-12-10'));
