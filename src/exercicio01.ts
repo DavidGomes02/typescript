@@ -11,11 +11,17 @@ class Funcionarios {
         this.cargo = cargo;
         this.telefone = telefone;
         this.dataNasciment = dataNasciment;
-
+    }
+    mostrarDados(){
+        console.log('---------------Dados do funcionario---------------');
+        console.log(`Nome do usuario: ${this.nomeFuncionario}`);
+        console.log(`E-mail: ${this.email}`);
+        console.log(`telefone: ${this.telefone}`);
+        console.log(`Cargo: ${this.dataNasciment.toLocaleDateString()}`);
     }
 }
 const funcionario1 = new Funcionarios('david.henrique4560@gmail.com', 'David Gomes', 'pediatra', '84987047031',new Date('2002-12-10'));
-console.log(funcionario1);
+console.log(funcionario1.mostrarDados());
 
 
 
@@ -28,9 +34,15 @@ class Pacientes {
         this.contatoPaciente = contatoPaciente;
         this.cpf = cpf;
     }
+    DadosPaciente(){
+        console.log('---------------Dados do Paciente---------------');
+        console.log(`Nome do paciente: ${this.nomePacientes}`);
+        console.log(`Contato do Paciente: ${this.contatoPaciente}`);
+        console.log(`CPF: ${this.cpf}`);
+    }       
 }
 const paciente1 = new Pacientes('David', '84987047031', '701.972.314-46');
-console.log(paciente1);
+console.log(paciente1.DadosPaciente());
 
 class consultas {
 
@@ -44,6 +56,13 @@ class consultas {
         this.paciente = paciente;
         this.medico = medico;
     }
+    DadosConsulta(){
+        console.log('---------------Dados da Consulta---------------');
+        console.log(`Area da Consulta: ${this.tipoDeConsulta}`);
+        console.log(`Medico: ${funcionario1.nomeFuncionario}`);
+        console.log(`Data da Consulta: ${this.dataDeConsultas.toLocaleDateString()}`);
+        console.log(`Paciente: ${paciente1.nomePacientes}`);
+}
 }
 const consulta1 = new consultas('Pediatra', new Date('2023.03.25'), funcionario1, paciente1);
-console.log(consulta1);
+console.log(consulta1.DadosConsulta());
