@@ -1,23 +1,37 @@
-class Pessoa {
-    nome: string;
-    email: string;
-    telefone: string;
-    dataDeNascimento: Date;
-    endereco: string;
-    CPF: string;
-    matricula: string;
-    genero?: string;
-    constructor(nome: string, email: string, telefone: string, dataDeNascimento: Date, endereco: string, CPF: string,matricula: string, genero?: string ) {
+abstract class Pessoa {
+
+    public nome: string;
+    protected email: string;
+    public telefone: string;
+    protected dataDeNascimento: Date;
+    public endereco: string[];
+    protected CPF: string;
+    public matricula: string;
+    private genero?: string;
+
+    constructor(
+        nome: string,
+        email: string,
+        telefone: string,
+        dataDeNascimento: Date,
+        endereco: string[],
+        CPF: string,
+        matricula: string,
+        genero?: string) {
+
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.dataDeNascimento = dataDeNascimento;
         this.endereco = endereco;
         this.CPF = CPF;
-        this.matricula = matricula; 
+        this.matricula = matricula;
     }
+
+    abstract mostrarDados(): void;
+
     dadosPessoas() {
-        
+
         console.log(`Nome: ${this.nome}`)
         console.log(`E-mail: ${this.email}`)
         console.log(`Telefone: ${this.telefone}`)
@@ -26,31 +40,30 @@ class Pessoa {
         console.log(`CPF: ${this.CPF}`)
         console.log(`Matricula: ${this.matricula}`);
 
-    if(this.genero) {
-        console.log(`Genero: ${this.genero}`)
+        if (this.genero) {
+            console.log(`Genero: ${this.genero}`)
+        }
     }
 }
-}
 
 
-class Funcionarios extends Pessoa{
-    matricula: string;
+export class Funcionarios extends Pessoa {
     cargo: string;
 
-    constructor(cargo: string, matricula: string, nome: string, email: string, telefone: string, dataDeNascimento: Date, endereco: string, CPF: string, genero?: string) {
-       super(nome, email, telefone, dataDeNascimento, endereco, CPF, matricula);
-        this.matricula = matricula;
+    constructor(cargo: string, matricula: string, nome: string, email: string, telefone: string, dataDeNascimento: Date, endereco: string[], CPF: string, genero?: string) {
+        super(nome, email, telefone, dataDeNascimento, endereco, CPF, matricula);
         this.cargo = cargo;
     }
     mostrarDados() {
         console.log('---------------Dados do funcionario---------------');
         super.dadosPessoas()
         console.log(`Cargo: ${this.cargo}`);
-        console.log(`Matricula: ${this.matricula}`);
-    }   
+
+    }
 }
-const funcionario1 = new Funcionarios('David Gomes', 'david.henrique4560@gmail.com', '84987047031', new Date('2002.12.10'), 'Nova Natal', '70197231446','pediatra', '002.488.064', 'Masculino');
-funcionario1.mostrarDados();
+const funcionario1 = new Funcionarios('Pediatra', '002.488.064', 'David Gomes', 'david.henrique4560@gmail.com', '84987047031', new Date('2002.12.10'), ['Nova Natal', '584'], '70197231446', 'Masculino');
+
+funcionario1.mostrarDados()
 
 
 
