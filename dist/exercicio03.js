@@ -1,4 +1,5 @@
-class Conta {
+"use strict";
+/* class Conta {
     nome: string;
     tipoDeConta: string;
     titularidade: string;
@@ -29,7 +30,7 @@ class DespesasReceitas {
     despesaPj: string;
     receitaPf: string;
     receitaPj: string;
-    constructor(despesaPf: string, receitaPf: string, receitaPj: string, receitaPj: string) {
+    constructor(despesaPf: string, receitaPf: string, receitaPj: string, despesaPj: string) {
         this.despesaPf = despesaPf;
         this.despesaPj = despesaPj;
         this.receitaPf = receitaPf;
@@ -68,3 +69,4 @@ class Planejamento {
 
 
 
+ */ 

@@ -1,4 +1,4 @@
-
+/* 
 class Usuario {
     nome: string;
     endereco: string;
@@ -64,4 +64,4 @@ class Emprestimo {
             }
 }
 const emprestimo1 = new Emprestimo(new Date('2024.02.21'), new Date('2024.03.21'), usuario1, livro1);
-console.log(emprestimo1.dadosLivros());
+console.log(emprestimo1.dadosLivros()); */
